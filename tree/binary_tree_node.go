@@ -4,6 +4,8 @@ type BinaryTreeNode interface {
 	Node
 	Left() BinaryTreeNode
 	Right() BinaryTreeNode
+	SetLeft(n BinaryTreeNode)
+	SetRight(n BinaryTreeNode)
 }
 
 type binaryTreeNode struct {
@@ -34,4 +36,12 @@ func (n binaryTreeNode) Left() BinaryTreeNode {
 
 func (n binaryTreeNode) Right() BinaryTreeNode {
 	return n.right
+}
+
+func (n binaryTreeNode) SetLeft(left BinaryTreeNode) {
+	n.left = left.(*binaryTreeNode)
+}
+
+func (n binaryTreeNode) SetRight(right BinaryTreeNode) {
+	n.right = right.(*binaryTreeNode)
 }

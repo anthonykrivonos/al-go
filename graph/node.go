@@ -15,3 +15,7 @@ func NewNode(value interface{}) *Node {
 func (n *Node) String() string {
 	return fmt.Sprint(n.value)
 }
+
+func (n *Node) Value() interface{} {
+	return n.value
+}

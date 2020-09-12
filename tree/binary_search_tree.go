@@ -11,8 +11,9 @@ type binarySearchTree struct {
 	comparator func(a, b interface{}) int
 }
 
-func NewBinarySearchTree(comparator func(a, b interface{}) int) BinarySearchTree {
+func NewBinarySearchTree(root BinaryTreeNode, comparator func(a, b interface{}) int) BinarySearchTree {
 	b := &binarySearchTree{}
+	b.root = root.(*binaryTreeNode)
 	b.comparator = comparator
 	return b
 }
